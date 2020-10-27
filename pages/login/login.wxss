@@ -1,0 +1,71 @@
+/* pages/login/login.wxss */
+
+page{
+  background: #ffffff;
+}
+
+#login-box{
+  padding: 85rpx;
+}
+.logo-img
+{
+  width: 400rpx;
+  height: 180rpx;
+  display: block;
+  margin: 0 auto
+
+}
+.login-item{
+  height: 36rpx;
+  padding: 44rpx 0 42rpx;
+  border-bottom: 1px solid #9b8e8e;
+  display: flex
+}
+
+.login-item input{
+  color: #333;
+  width: 340rpx;
+  font-size: 30rpx;
+  display: inline-block;
+  height: 30rpx;
+  line-height: 30rpx;
+  flex: 1;
+  margin-left: 20rpx;
+}
+
+.phcolor{
+  color: #D7D7D7;
+}
+
+.login-link{
+  padding: 30rpx 0;
+  color:#999;
+  height: 28rpx;
+  line-height: 28rpx;
+  font-size: 26rpx;
+}
+.login-link navigator{
+  display: inline-block;
+}
+.login-link navigator:last-child{
+  float: right
+}
+
+.login-btn{
+  width:820rpx;
+  height: 88rpx;
+  display: block;
+  margin: 32rpx auto;
+  color:#fff;
+  font-size: 34rpx;
+  background: #4693EC;
+  border-radius: 22rpx;
+  box-shadow:0px 4rpx 12rpx 0px rgba(9,75,151,0.24);
+}
+
+.navigator-hover {
+  color:blue;
+}
+.other-navigator-hover {
+  color:red;
+}

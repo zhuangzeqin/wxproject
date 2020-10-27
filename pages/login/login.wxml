@@ -1,0 +1,21 @@
+<!--pages/login/login.wxml-->
+<view id="login-box">
+    <!-- <image src="../../images/ABC.png" class="logo-img"></image> -->
+    <image src="https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png" class="logo-img"/>
+    <view class="login-item">
+     <view class="iconfont icon-iphone login-icon"></view>
+     <input value="{{mobile}}" type="number" auto-focus="true" maxlength="11" placeholder="请输入手机号" bindinput="getMobile" placeholder-class="phcolor"></input>
+     <view class="iconfont icon-delete_btn1" wx:if="{{mobile.length>0}}" bindtap="clearphone"></view>
+    </view>
+    <view class="login-item">
+     <view class="iconfont icon-lock1 login-icon"></view>
+     <input type="text" value="{{password}}" password="true" placeholder="请输入登录密码" bindinput="getPassword"  placeholder-class="phcolor"></input>
+    </view>
+    <view class="login-link">
+    <navigator url="/pages/register/register" hover-class="navigator-hover">立即注册</navigator>
+    <navigator url="/pages/forgotPassword/forgotPassword" hover-class="navigator-hover">忘记密码</navigator>
+  </view>
+  <view class="login-btn-box">
+    <button class="login-btn" size="default" disabled="{{disabled}}" bindtap="loginbtn" hover-class="other-button-hover">登录</button>
+  </view>
+</view>
