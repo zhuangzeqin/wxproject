@@ -63,9 +63,13 @@ Page({
       const app = getApp()
       app.globalData.item = '123456'
       wx.setStorageSync('title', "这是我存的title 值")
-      wx.navigateTo({
-        //路径后可以带参数。参数与路径之间使用 ? 分隔，参数键与参数值用 = 相连，不同参数用 & 分隔；如 'path?key=value&key2=value2'
+      // wx.navigateTo({
+      //   //路径后可以带参数。参数与路径之间使用 ? 分隔，参数键与参数值用 = 相连，不同参数用 & 分隔；如 'path?key=value&key2=value2'
        
+      //   url: '/pages/index/index?key=zzq&key2=31',
+
+      // })
+      wx.switchTab({
         url: '/pages/index/index?key=zzq&key2=31',
 
       })
@@ -128,4 +132,5 @@ Page({
   onShareAppMessage: function () {
 
   }
+  
 })

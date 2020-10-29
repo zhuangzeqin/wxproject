@@ -35,6 +35,7 @@ App({
   },
   globalData: {
     userInfo: null,
+    baseUrl: 'https://cs-ysb-core.51ydmw.com/core2/',
     item:null
   }
 })

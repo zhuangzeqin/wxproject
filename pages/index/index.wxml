@@ -1,13 +1,41 @@
 <!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    <!-- swiper实现轮播图，可触发点击事件-->
+    <swiper class="swiper" indicator-dots="{{indicatorDots}}" indicator-color="{{indicatorcolor}}" indicator-active-color="#ffffff" autoplay="{{autoplay}}" 
+    interval="{{interval}}" duration="{{duration}}" 
+    current="{{swiperCurrent}}" bindchange="swiperChange">
+    <block wx:for="{{imgUrls}}" wx:key="key">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image"bindtap="swipclick" />
+      </swiper-item>
     </block>
+  </swiper>
+  <view class="index-hp-con">
+    <view class="ic-item" bindtap="scClick" style="background-image: url('{{baseUrl+'/images/wx/btn_scan@2x.png'}}');"><view class="index-icon"><image src="{{baseUrl+'/images/wx/scan_payment@2x.png'}}"></image></view>扫码收款</view>
+    <view class="ic-item" bindtap="cardCerClick" style="background-image: url('{{baseUrl+'/images/wx/btn_card@2x.png'}}');"><view class="index-icon"><image src="{{baseUrl+'/images/wx/card_authentication@2x.png'}}"></image></view>卡片认证</view>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+ <!-- 九宫格菜单-->
+ <view id='services' class='services'>
+  <view class="grid" wx:for="{{servers}}" wx:key="key" >
+    <view class='grid-title'>
+      <text>{{item.title}}</text>
+    </view>
+    <view class='grid-items'>
+      <block wx:for="{{item.items}}" wx:key="key" >
+        <view class='grid-item'>
+          <view wx:if="{{item.enabled}}" class='mask'>
+            <text>{{item.detail}}</text>
+          </view>
+          <view class='navigator' data-name='{{item.name}}'  bindtap='bindNavigator'  hover-class="none">
+            <view class='item-content'>
+              <view class="item-content-icon">
+                <image src="{{item.icon}}" mode="scaleToFill" />
+              </view>
+              <text class="weui-grid_label">{{item.name}}</text>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
   </view>
 </view>
+
