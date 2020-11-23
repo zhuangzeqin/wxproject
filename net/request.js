@@ -28,3 +28,65 @@ export default function reqeust(params) {
     })
   })
 }
+
+const postReqeust = ({ url = '', param = {}} = {}) =>  {
+  console.log("请求的地址：" + baseUrl + url)
+  console.log("请求的参数：" + JSON.stringify(param ? '{}' : param))
+  return new Promise((resolve, reject) => {
+    wx.request({
+      url: baseUrl + url,
+      method: 'post',// || 'get'
+      data: param || {},
+      success: (res) => {
+        const code = res.statusCode //状态码200 代表成功
+        console.log("请求的状态码：" + code)
+        if (code == 200) {
+          console.log("请求的成功：" + JSON.stringify(res.data))
+          resolve(res.data)
+        } else {
+          console.log("请求的失败：" + err.errMsg)
+          reject(err.errMsg)
+        }
+      },
+      fail: (err) => {
+        console.log("请求的失败：" + err.errMsg)
+        reject(err.errMsg)
+      }
+    })
+  })
+}
+// get 请求
+const getReqeust = ({ url = '', param = {}} = {}) =>  {
+  console.log("请求的地址：" + baseUrl + url)
+  console.log("请求的参数：" + JSON.stringify(param ? '{}' : param))
+  return new Promise((resolve, reject) => {
+    wx.request({
+      url: baseUrl + url,
+      method: 'get',// || 'get'
+      data: param || {},
+      success: (res) => {
+        const code = res.statusCode //状态码200 代表成功
+        console.log("请求的状态码：" + code)
+        if (code == 200) {
+          console.log("请求的成功：" + JSON.stringify(res.data))
+          resolve(res.data)
+        } else {
+          console.log("请求的失败：" + err.errMsg)
+          reject(err.errMsg)
+        }
+      },
+      fail: (err) => {
+        console.log("请求的失败：" + err.errMsg)
+        reject(err.errMsg)
+      }
+    })
+  })
+}
+
+
+export {
+  baseUrl,
+  getReqeust,
+  postReqeust,
+  reqeust
+}

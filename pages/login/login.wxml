@@ -18,4 +18,29 @@
   <view class="login-btn-box">
     <button class="login-btn" size="default" disabled="{{disabled}}" bindtap="loginbtn" hover-class="other-button-hover">登录</button>
   </view>
+<!-- 
+   <dialog id='dialog' 
+      title='{{mTitle}}' 
+      content='恭喜你，学会了小程序组件' 
+      cancelText='知道了' 
+      confirm='谢谢你'
+      bind:cancelEvent="_cancelEvent"  
+      bind:confirmEvent="_confirmEvent">
+    </dialog> -->
+
+
+     <dialog id='dialog' 
+      title='{{mTitle}}' 
+      content='{{mContent}}' 
+      cancelText='{{mCancelText}}' 
+      confirmText='{{mConfirmText}}'
+      bind:cancelEvent="_cancelEvent"  
+      bind:confirmEvent="_confirmEvent">
+    </dialog> 
+    
+    <button type="primary" 
+    bindtap="showDialog" 
+    data-title="温馨提示22"
+    data-content="恭喜你，学会了小程序组件33"
+    data-cancelText= "知道了44" data-confirmText="谢谢你55"> ClickMe! </button>
 </view>
