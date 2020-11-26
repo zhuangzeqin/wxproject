@@ -64,7 +64,6 @@ Component({
     },
     //展示弹框
     showDialog() {
-      console.log(2222)
       this.setData({
         isShow: !this.data.isShow,
        

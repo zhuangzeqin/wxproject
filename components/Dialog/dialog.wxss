@@ -91,4 +91,5 @@
   transform-origin: 0 0;
   -webkit-transform: scaleX(0.5);
   transform: scaleX(0.5);
+  background-color: tomato;
 }
